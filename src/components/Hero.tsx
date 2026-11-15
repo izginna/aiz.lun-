@@ -12,8 +12,8 @@ const HERO_PROOFS = [
     label: 'Полный сеанс глубокой проработки без спешки',
   },
   {
-    value: 'До 00:00',
-    label: 'Пн–Пт с 19:20 · Сб с 16:20 · Вс весь день',
+    value: 'Без выходных',
+    label: 'Пн–Пт с 19:20 · Сб с 16:20 · Вс весь день до 00:00',
   },
   {
     value: 'Акберен, 4',
@@ -53,7 +53,7 @@ export function Hero() {
               <p className="mt-6 text-base sm:text-lg text-[#565B54] leading-relaxed max-w-xl">
                 Глубокая работа с мышцами, триггерными точками и лимфотоком на основе
                 клинического опыта более 3 лет. Спокойный, современно оборудованный кабинет
-                в ЖК Riviera Park с вечерним графиком до полуночи.
+                в ЖК Riviera Park — приём без выходных строго по предварительной записи.
               </p>
             </div>
 
@@ -67,24 +67,31 @@ export function Hero() {
               </a>
 
               <a
-                href={STUDIO_INFO.telHref}
-                className="inline-flex items-center py-3 px-2 text-sm sm:text-base font-medium text-[#181A18] hover:text-[#2B463C] underline underline-offset-4 decoration-[#E2E2DA] hover:decoration-[#2B463C] transition-colors whitespace-nowrap shrink-0 tabular-nums"
+                href={STUDIO_INFO.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-col py-1 px-1 text-left group"
               >
-                {STUDIO_INFO.phoneDisplay}
+                <span className="text-sm sm:text-base font-medium text-[#181A18] group-hover:text-[#2B463C] underline underline-offset-4 decoration-[#E2E2DA] group-hover:decoration-[#2B463C] transition-colors tabular-nums">
+                  WhatsApp {STUDIO_INFO.phoneDisplay}
+                </span>
+                <span className="text-xs text-[#565B54]">
+                  Звонки не принимаются
+                </span>
               </a>
             </div>
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative w-full h-full min-h-[380px] lg:min-h-[480px] rounded-2xl overflow-hidden border border-[#E2E2DA] bg-[#EFEFE9]">
+            <div className="relative w-full h-full min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden border border-[#E2E2DA] bg-[#181A18]">
               <StudioImage
-                src="/assets/aistudio/studio_ambient.jpg"
-                alt="Интерьер массажного кабинета AIZ.LUN в ЖК Riviera Park с тёплой вечерней подсветкой"
+                src="/assets/aistudio/studio_warm_cropped.jpg"
+                alt="Интерьер массажного кабинета AIZ.LUN в ЖК Riviera Park с тёплым вечерним светом"
                 className="w-full h-full object-cover object-center"
                 fallbackLabel="Кабинет в ЖК Riviera Park"
               />
               <div
-                className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"
+                className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
                 aria-hidden="true"
               />
               <div className="absolute inset-x-0 bottom-0 p-6 flex items-end justify-between gap-4">

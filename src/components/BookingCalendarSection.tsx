@@ -8,7 +8,6 @@ import {
   Copy,
   MapPin,
   MessageCircle,
-  Phone,
 } from 'lucide-react';
 import {
   ADDON_SERVICES,
@@ -502,23 +501,15 @@ export function BookingCalendarSection({
                 }`}
               >
                 <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
-                <span>Забронировать на {STUDIO_INFO.phoneDisplay}</span>
+                <span>Записаться в WhatsApp · {STUDIO_INFO.phoneDisplay}</span>
               </a>
 
-              <div className="grid grid-cols-2 gap-2.5">
-                <a
-                  href={STUDIO_INFO.telHref}
-                  className="inline-flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border border-[#E2E2DA] bg-white text-xs font-medium text-[#181A18] hover:bg-[#EFEFE9] transition-colors whitespace-nowrap"
-                >
-                  <Phone className="w-3.5 h-3.5 text-[#2B463C]" aria-hidden="true" />
-                  <span>Позвонить</span>
-                </a>
-
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
                 <button
                   type="button"
                   onClick={handleCopyBooking}
                   disabled={!hasAnySelection}
-                  className="inline-flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border border-[#E2E2DA] bg-white text-xs font-medium text-[#181A18] hover:bg-[#EFEFE9] disabled:opacity-40 transition-colors whitespace-nowrap"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border border-[#E2E2DA] bg-white text-xs font-medium text-[#181A18] hover:bg-[#EFEFE9] disabled:opacity-40 transition-colors whitespace-nowrap"
                 >
                   {copied ? (
                     <>
@@ -528,19 +519,22 @@ export function BookingCalendarSection({
                   ) : (
                     <>
                       <Copy className="w-3.5 h-3.5 text-[#565B54]" aria-hidden="true" />
-                      <span>Скопировать заявку</span>
+                      <span>Скопировать текст заявки</span>
                     </>
                   )}
                 </button>
               </div>
+              <p className="text-xs text-[#565B54]">
+                {STUDIO_INFO.bookingPolicy}
+              </p>
             </div>
 
             {submittedPreview && hasAnySelection && (
               <div className="p-4 rounded-xl bg-[#EFEFE9] border border-[#2B463C]/25 text-xs text-[#181A18] space-y-1.5">
-                <p className="font-semibold">Заявка сформирована для {STUDIO_INFO.phoneDisplay}</p>
+                <p className="font-semibold">Заявка сформирована для WhatsApp {STUDIO_INFO.phoneDisplay}</p>
                 <p className="text-[#565B54]">
-                  Если мессенджер не открылся автоматически, нажмите «Позвонить» или
-                  скопируйте текст заявки выше.
+                  Если WhatsApp не открылся автоматически, скопируйте текст заявки кнопкой
+                  выше и отправьте сообщение на {STUDIO_INFO.phoneDisplay}.
                 </p>
               </div>
             )}

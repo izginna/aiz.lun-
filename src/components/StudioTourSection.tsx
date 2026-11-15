@@ -18,7 +18,7 @@ const CREDENTIALS = [
 
 export function StudioTourSection() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
 
   const togglePlay = () => {
@@ -44,14 +44,15 @@ export function StudioTourSection() {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden border border-[#E2E2DA] bg-[#181A18] aspect-[9/16] max-h-[620px] mx-auto lg:mx-0">
+            <div className="relative rounded-2xl overflow-hidden border border-[#E2E2DA] bg-[#181A18] aspect-[9/16] max-h-[640px] mx-auto lg:mx-0">
               <video
                 ref={videoRef}
-                poster="/assets/aistudio/studio_table.jpg"
+                poster="/assets/aistudio/studio_warm_cropped.jpg"
+                autoPlay
                 playsInline
                 muted={isMuted}
                 loop
-                preload="metadata"
+                preload="auto"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
                 className="w-full h-full object-cover"
@@ -100,7 +101,7 @@ export function StudioTourSection() {
             </div>
 
             <p className="mt-3 text-xs text-[#565B54]">
-              Видео-обзор кабинета · актуальные видео также в{' '}
+              Видео-обзор кабинета · новые обзоры также в{' '}
               <a
                 href={STUDIO_INFO.instagramUrl}
                 target="_blank"
@@ -148,29 +149,29 @@ export function StudioTourSection() {
               })}
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
-              <div className="rounded-xl overflow-hidden border border-[#E2E2DA] aspect-[3/4] bg-white">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-stretch">
+              <div className="rounded-xl overflow-hidden border border-[#E2E2DA] aspect-[3/4] bg-[#181A18]">
                 <StudioImage
-                  src="/assets/aistudio/studio_table.jpg"
-                  alt="Массажная кушетка и зона ожидания в кабинете AIZ.LUN"
+                  src="/assets/aistudio/IMG_2405_f69d8831.jpeg"
+                  alt="Информация о записи AIZ.LUN — профессиональный массаж с опытом более 3 лет"
                   className="w-full h-full object-cover"
-                  fallbackLabel="Зона массажа"
+                  fallbackLabel="Памятка по записи AIZ.LUN"
                 />
               </div>
-              <div className="rounded-xl overflow-hidden border border-[#E2E2DA] aspect-[3/4] bg-white">
+              <div className="rounded-xl overflow-hidden border border-[#E2E2DA] aspect-[3/4] bg-[#181A18]">
                 <StudioImage
-                  src="/assets/aistudio/studio_tools.jpg"
-                  alt="Массажные масла, ролики для мадеротерапии и инструменты"
+                  src="/assets/aistudio/studio_warm_cropped.jpg"
+                  alt="Атмосфера массажного кабинета в ЖК Riviera Park при тёплом свете"
                   className="w-full h-full object-cover"
-                  fallbackLabel="Инструменты и масла"
+                  fallbackLabel="Кабинет в ЖК Riviera Park"
                 />
               </div>
-              <div className="rounded-xl overflow-hidden border border-[#E2E2DA] aspect-[3/4] bg-white">
+              <div className="rounded-xl overflow-hidden border border-[#E2E2DA] aspect-[3/4] bg-[#2D1D10]">
                 <StudioImage
-                  src="/assets/aistudio/studio_mirror.jpg"
-                  alt="Освещение и интерьер кабинета в ЖК Riviera Park"
-                  className="w-full h-full object-cover"
-                  fallbackLabel="Интерьер кабинета"
+                  src="/assets/aistudio/aizlun_logo.jpg"
+                  alt="Фирменный знак массажного кабинета aiz.lun"
+                  className="w-full h-full object-cover object-center"
+                  fallbackLabel="aiz.lun"
                 />
               </div>
             </div>

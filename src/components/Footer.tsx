@@ -41,10 +41,12 @@ export function Footer() {
             Instagram @{STUDIO_INFO.instagramHandle}
           </a>
           <a
-            href={STUDIO_INFO.telHref}
+            href={STUDIO_INFO.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-[#181A18] font-medium hover:underline underline-offset-4 whitespace-nowrap tabular-nums"
           >
-            {STUDIO_INFO.phoneDisplay}
+            WhatsApp {STUDIO_INFO.phoneDisplay}
           </a>
         </div>
       </div>
