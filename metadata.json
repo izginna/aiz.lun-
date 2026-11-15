@@ -1,0 +1,8 @@
+{
+  "name": "AIZ.LUN — Массажный кабинет",
+  "description": "Частный массажный кабинет в ЖК Riviera Park (Акберен, 4). Классический, китайский точечный, спортивный, лимфодренажный и оздоровительный массаж. Онлайн-календарь предварительной записи.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
